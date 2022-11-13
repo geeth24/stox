@@ -55,7 +55,7 @@ function Factors() {
                 >
                     {factors.map((factor, key) => {
                         return (
-                            <VStack spacing={4} align="left" key={key}>
+                            <VStack spacing={2} align="left" key={key}>
                                 <Text
                                     fontSize="xl"
                                     fontWeight="bold"
