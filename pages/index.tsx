@@ -40,12 +40,3 @@ const Home: NextPage = ({ data }: any) => {
 }
 
 export default Home
-
-export async function getServerSideProps() {
-    const res = await fetch("https://legaldove.geethg.com/api/data")
-    const data = await res.json()
-
-    return {
-        props: { data: data }, // will be passed to the page component as props
-    }
-}
