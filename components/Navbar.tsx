@@ -104,15 +104,6 @@ const Navbar = () => {
                                 md: "inline-flex",
                             }}
                         ></HStack>
-                        <Button
-                            size="large"
-                            variant="ghost"
-                            fontSize="2xl"
-                            _hover={{ bg: "" }}
-                        >
-                            Help
-                        </Button>
-                        <IoLanguage fontSize="30px" />
                         <IconButton
                             size="lg"
                             fontSize="lg"
