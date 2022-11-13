@@ -23,6 +23,13 @@ import React from "react"
 
 function Factors() {
     const [factor, setFactor] = React.useState("")
+    const [factors, setFactors] = React.useState([
+        "Interest Rates",
+        "Treasury bonds",
+        "Unemployment",
+        "Stock market",
+        "Government spending and regulations",
+    ])
     return (
         <Box px={8} py={24} mx="auto" maxWidth="5xl">
             <SimpleGrid
@@ -47,23 +54,29 @@ function Factors() {
                         md: 4,
                     }}
                 >
-                    <VStack spacing={4} align="left">
-                        <Text fontSize="xl" fontWeight="bold" mb={4}>
-                            Factors
-                        </Text>
-                        <Select
-                            placeholder="Select factor"
-                            onChange={(e) => setFactor(e.target.value)}
-                        >
-                            <option value="option1">Interest rates</option>
-                            <option value="option2">Treasury bonds</option>
-                            <option value="option3">Unemployment</option>
-                            <option value="option4">Stock market</option>
-                            <option value="option5">
-                                Government spending and regulations
-                            </option>
-                        </Select>
-                    </VStack>
+                    {factors.map((factor, key) => {
+                        return (
+                            <VStack spacing={4} align="left" key={key}>
+                                <Text
+                                    fontSize="xl"
+                                    fontWeight="bold"
+                                    marginY={2}
+                                >
+                                    {factor}
+                                </Text>
+                                <Select
+                                    placeholder="Select factor"
+                                    onChange={(e) => setFactor(e.target.value)}
+                                >
+                                    <option value="option1">Increasing</option>
+                                    <option value="option2">
+                                        Staying the same
+                                    </option>
+                                    <option value="option3">Decreasing</option>
+                                </Select>
+                            </VStack>
+                        )
+                    })}
                 </GridItem>
                 <GridItem
                     colSpan={{
