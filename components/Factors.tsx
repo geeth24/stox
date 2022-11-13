@@ -25,10 +25,9 @@ function Factors() {
     const [factor, setFactor] = React.useState("")
     const [factors, setFactors] = React.useState([
         "Interest Rates",
-        "Treasury bonds",
         "Unemployment",
-        "Stock market",
-        "Government spending and regulations",
+        "Government spending",
+        "Regulations",
     ])
     return (
         <Box px={8} py={24} mx="auto" maxWidth="5xl">
