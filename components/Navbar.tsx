@@ -12,6 +12,7 @@ import {
     Text,
     Link,
     Image,
+    useColorMode,
 } from "@chakra-ui/react"
 import { useViewportScroll } from "framer-motion"
 import React from "react"
@@ -35,6 +36,7 @@ function Navbar() {
 
     //check if scrollY is greater than 0
     const isScrolled = y > 0
+    const { colorMode, toggleColorMode } = useColorMode()
 
     const MobileNavContent = (
         <VStack
@@ -79,7 +81,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     Protocol
                 </Text>
             </Box>
@@ -96,7 +98,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     Governance
                 </Text>
             </Box>
@@ -112,7 +114,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     Docs
                 </Text>
             </Box>
@@ -129,7 +131,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     About
                 </Text>
             </Box>
@@ -146,7 +148,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     Twitter
                 </Text>
             </Box>
@@ -163,7 +165,7 @@ function Navbar() {
                 }}
                 p={3}
             >
-                <Text fontSize="xl" fontWeight="medium" color="white" ml={5}>
+                <Text fontSize="xl" fontWeight="medium" ml={5}>
                     Discord
                 </Text>
             </Box>
@@ -196,7 +198,7 @@ function Navbar() {
                     w="full"
                     h="full"
                     px="6"
-                    // align="center"
+                    align="center"
                     justify="space-between"
                 >
                     <Flex align="center">
@@ -205,8 +207,9 @@ function Navbar() {
                                 <Text
                                     fontSize="xl"
                                     fontWeight="medium"
-                                    color="white"
                                     ml={5}
+                                    color="black"
+                                    _dark={{ color: "white" }}
                                 >
                                     Stox
                                 </Text>
@@ -228,7 +231,6 @@ function Navbar() {
                             }}
                         >
                             <Button
-                                color="white"
                                 alignItems="center"
                                 fontSize={{ base: "sm", md: "md" }}
                                 fontWeight="medium"
@@ -243,7 +245,6 @@ function Navbar() {
                                 Protocol
                             </Button>
                             <Button
-                                color="white"
                                 alignItems="center"
                                 fontSize={{ base: "sm", md: "md" }}
                                 fontWeight="medium"
@@ -258,7 +259,6 @@ function Navbar() {
                                 Governance
                             </Button>
                             <Button
-                                color="white"
                                 alignItems="center"
                                 fontSize={{ base: "sm", md: "md" }}
                                 fontWeight="medium"
@@ -273,7 +273,6 @@ function Navbar() {
                                 Docs
                             </Button>
                             <Button
-                                color="white"
                                 alignItems="center"
                                 fontSize={{ base: "sm", md: "md" }}
                                 fontWeight="medium"
@@ -289,7 +288,6 @@ function Navbar() {
                             </Button>
 
                             <Button
-                                color="white"
                                 alignItems="center"
                                 fontSize={{ base: "sm", md: "md" }}
                                 fontWeight="medium"
@@ -307,7 +305,7 @@ function Navbar() {
                         </HStack>
                     </Box>
 
-                    <HStack spacing="2" color="white">
+                    <HStack spacing="2">
                         <HStack spacing="5">
                             <HStack
                                 spacing="5"
@@ -315,6 +313,8 @@ function Navbar() {
                                     base: "none",
                                     lg: "flex",
                                 }}
+                                color="black"
+                                _dark={{ color: "white" }}
                             >
                                 <Icon as={FaDiscord} />
                                 <Icon as={FaTwitter} />
@@ -325,8 +325,10 @@ function Navbar() {
                                 width="150px"
                                 bg="white"
                                 color="black"
+                                onClick={toggleColorMode}
                             >
-                                Launching Soon...
+                                Toggle{" "}
+                                {colorMode === "light" ? "Dark" : "Light"}
                             </Button>
                         </HStack>
                         <IconButton
