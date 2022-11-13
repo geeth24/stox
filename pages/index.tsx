@@ -1,4 +1,4 @@
-import { useColorModeValue } from "@chakra-ui/react"
+import { useColorModeValue, Box, Button, Flex } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import type { NextPage } from "next"
 import Head from "next/head"
@@ -26,6 +26,13 @@ const Home: NextPage = ({ data }: any) => {
             <Navbar />
             <Levels />
             <Factors />
+            <Box px={8} py={24} mx="auto" maxWidth="5xl">
+                <Flex justifyContent="center">
+                    <Button colorScheme="teal" size="lg">
+                        Analyze
+                    </Button>
+                </Flex>
+            </Box>
             {/* <Hero data={data} /> */}
         </div>
         // </motion.div>
