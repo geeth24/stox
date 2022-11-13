@@ -2,6 +2,8 @@ import { useColorModeValue } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import type { NextPage } from "next"
 import Head from "next/head"
+import Factors from "../components/Factors"
+import Levels from "../components/Levels"
 import Navbar from "../components/Navbar"
 
 const Home: NextPage = ({ data }: any) => {
@@ -22,6 +24,8 @@ const Home: NextPage = ({ data }: any) => {
                 <link rel="icon" href="/logo.svg"></link>
             </Head>
             <Navbar />
+            <Levels />
+            <Factors />
             {/* <Hero data={data} /> */}
         </div>
         // </motion.div>

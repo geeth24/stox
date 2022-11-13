@@ -44,7 +44,7 @@ const Navbar = () => {
         <React.Fragment>
             <chakra.header
                 // bg={bg}
-                position="fixed"
+                position="sticky"
                 top={0}
                 w="full"
                 px={{
@@ -56,12 +56,13 @@ const Navbar = () => {
                 transition="all 0.3s"
                 bg={scrollNav ? navBg : "transparent"}
                 shadow={scrollNav ? "md" : "none"}
+                borderBottom="1px solid"
             >
                 <Flex
                     alignItems="center"
                     justifyContent="space-between"
                     mx="auto"
-                    maxW="5xl"
+                    maxW="7xl"
                 >
                     <Flex>
                         <chakra.a
@@ -70,7 +71,7 @@ const Navbar = () => {
                             display="flex"
                             alignItems="center"
                         ></chakra.a>
-                        <chakra.h1
+                        {/* <chakra.h1
                             fontSize="xl"
                             fontWeight="900"
                             ml="2"
@@ -81,13 +82,17 @@ const Navbar = () => {
                             // fontFamily="Playfair Display"
                         >
                             Stox
-                        </chakra.h1>
-                        {/* <Image
-                            src={useColorModeValue("/logo.svg", "/logod.svg")}
+                        </chakra.h1> */}
+                        <Image
+                            src={useColorModeValue(
+                                "/Sto (1).png",
+                                "/Sto (2).png"
+                            )}
                             alt="Logo"
-                            width="200px"
+                            // width="150px"
+                            height="50px"
                             ml={12}
-                        /> */}
+                        />
                     </Flex>
                     <HStack display="flex" alignItems="center" spacing={7}>
                         <HStack
